@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Curso.cadastro
 {
@@ -219,7 +220,7 @@ namespace Curso.cadastro
 
         private void FRMCADcliente_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");
                 e.SuppressKeyPress = true;
