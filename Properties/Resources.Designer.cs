@@ -63,6 +63,16 @@ namespace Curso.cadastro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Caaaaaaaapturar {
+            get {
+                object obj = ResourceManager.GetObject("Caaaaaaaapturar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Capturaar {
             get {
                 object obj = ResourceManager.GetObject("Capturaar", resourceCulture);
@@ -83,6 +93,36 @@ namespace Curso.cadastro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fio {
+            get {
+                object obj = ResourceManager.GetObject("fio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fio_2 {
+            get {
+                object obj = ResourceManager.GetObject("fio 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_feminino_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-feminino-24", resourceCulture);
@@ -93,9 +133,69 @@ namespace Curso.cadastro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fotografia_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fotografia-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_masculino_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-masculino-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_novo_arquivo_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-novo-arquivo-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_novo_arquivo_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-novo-arquivo-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_novo_arquivo_20_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-novo-arquivo-20(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_novo_arquivo_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-novo-arquivo-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

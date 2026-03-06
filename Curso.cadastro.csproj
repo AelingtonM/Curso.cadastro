@@ -94,5 +94,35 @@
   <ItemGroup>
     <None Include="Resources\icons8-feminino-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fotografia-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-novo-arquivo-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-novo-arquivo-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-novo-arquivo-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-novo-arquivo-20%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fio.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fio 2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caaaaaaaapturar.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
