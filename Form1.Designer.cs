@@ -783,7 +783,7 @@
             this.Controls.Add(this.TXTcliente);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
-            this.ForeColor = System.Drawing.Color.Salmon;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
