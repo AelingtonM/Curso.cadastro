@@ -72,8 +72,6 @@
             this.BTnovo = new System.Windows.Forms.Button();
             this.BTadicionafoto = new System.Windows.Forms.Button();
             this.IMGcliente = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IMGcliente)).BeginInit();
             this.SuspendLayout();
@@ -359,7 +357,7 @@
             this.TXTdoc.BackColor = System.Drawing.Color.Gainsboro;
             this.TXTdoc.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTdoc.Location = new System.Drawing.Point(233, 149);
-            this.TXTdoc.Mask = "000.000.000-00";
+            this.TXTdoc.Mask = "000,000,000-00";
             this.TXTdoc.Name = "TXTdoc";
             this.TXTdoc.Size = new System.Drawing.Size(114, 23);
             this.TXTdoc.TabIndex = 1;
@@ -603,11 +601,6 @@
             this.CBbairro.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBbairro.FormattingEnabled = true;
             this.CBbairro.IntegralHeight = false;
-            this.CBbairro.Items.AddRange(new object[] {
-            "Solteiro(a)",
-            "Casado(a)",
-            "Divorciado(a)",
-            "Viúvo(a)"});
             this.CBbairro.Location = new System.Drawing.Point(59, 358);
             this.CBbairro.Name = "CBbairro";
             this.CBbairro.Size = new System.Drawing.Size(330, 23);
@@ -711,26 +704,6 @@
             this.IMGcliente.TabIndex = 10;
             this.IMGcliente.TabStop = false;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(298, 606);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 43);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(405, 606);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(95, 43);
-            this.button7.TabIndex = 23;
-            this.button7.Text = "button6";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // FRMCADcliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,8 +712,6 @@
             this.BackgroundImage = global::Curso.cadastro.Properties.Resources.image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 661);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.BTremovefoto);
             this.Controls.Add(this.BTsalvar);
             this.Controls.Add(this.BTnovo);
@@ -847,8 +818,6 @@
         private System.Windows.Forms.Button BTfechar;
         private System.Windows.Forms.Button BTnovo;
         private System.Windows.Forms.Button BTsalvar;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
     }
 }
 

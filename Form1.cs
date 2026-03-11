@@ -227,37 +227,6 @@ namespace Curso.cadastro
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection conexao = new MySqlConnection("server=127.0.0.1;port=3306;database=base_cliente;user=root;password="))
-            {
-                conexao.Open();
-
-                using (MySqlCommand cmd = conexao.CreateCommand())
-                {
-                    cmd.CommandText = "INSERT INTO clientes (nome, documento, genero, rg, estado_civil, nasc, cep, endereco, n, bairro, cidade, estado, telefone, email, obs, situacao) VALUES (@nome,@documento, @genero, @rg, @estado_civil, @nasc, @cep, @endereco, @n, @bairro, @cidade, @estado, @telefone, @email, @obs, @situacao)";
-
-                    cmd.Parameters.AddWithValue("@nome", TXTcliente.Text);
-                    cmd.Parameters.AddWithValue("@documento", TXTdoc.Text);
-                    cmd.Parameters.AddWithValue("@genero", "genero");
-                    cmd.Parameters.AddWithValue("@rg", TXTrg.Text);
-                    cmd.Parameters.AddWithValue("@estado_civil", CBestadocivil.Text);
-                    cmd.Parameters.AddWithValue("@nasc", TXTnasc.Text);
-                    cmd.Parameters.AddWithValue("@cep", TXTcep.Text);
-                    cmd.Parameters.AddWithValue("@endereco", CBendereco.Text);
-                    cmd.Parameters.AddWithValue("@n", TXTn.Text);
-                    cmd.Parameters.AddWithValue("@bairro", CBbairro.Text);
-                    cmd.Parameters.AddWithValue("@cidade", CBcidade.Text);
-                    cmd.Parameters.AddWithValue("@estado", CBestado.Text);
-                    cmd.Parameters.AddWithValue("@telefone", TXTtelefone.Text);
-                    cmd.Parameters.AddWithValue("@email", TXTemail.Text);
-                    cmd.Parameters.AddWithValue("@obs", TXTobs.Text);
-                    cmd.Parameters.AddWithValue("@situacao", CKsituacao.Text);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -280,7 +249,16 @@ namespace Curso.cadastro
 
                     cmd.Parameters.AddWithValue("@nome", TXTcliente.Text);
                     cmd.Parameters.AddWithValue("@documento", TXTdoc.Text);
-                    cmd.Parameters.AddWithValue("@genero", "genero");
+
+                    if(RBmasc.Checked == true)
+                        {
+                        cmd.Parameters.AddWithValue("@genero", "Masculino");
+                    }
+                    else if(RBfemi.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@genero", "Feminino");
+                    }
+                    
                     cmd.Parameters.AddWithValue("@rg", TXTrg.Text);
                     cmd.Parameters.AddWithValue("@estado_civil", CBestadocivil.Text);
                     cmd.Parameters.AddWithValue("@nasc", TXTnasc.Text);
@@ -293,7 +271,18 @@ namespace Curso.cadastro
                     cmd.Parameters.AddWithValue("@telefone", TXTtelefone.Text);
                     cmd.Parameters.AddWithValue("@email", TXTemail.Text);
                     cmd.Parameters.AddWithValue("@obs", TXTobs.Text);
-                    cmd.Parameters.AddWithValue("@situacao", CKsituacao.Text);
+
+                    if(CKsituacao.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@situacao", "Ativo");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@situacao", "Inativo");
+                    }
+
+
+
                     cmd.ExecuteNonQuery();
                 }
             }
