@@ -66,12 +66,12 @@
             this.CBendereco = new System.Windows.Forms.ComboBox();
             this.CBcidade = new System.Windows.Forms.ComboBox();
             this.CBbairro = new System.Windows.Forms.ComboBox();
-            this.BTfechar = new System.Windows.Forms.Button();
             this.BTremovefoto = new System.Windows.Forms.Button();
             this.BTsalvar = new System.Windows.Forms.Button();
             this.BTnovo = new System.Windows.Forms.Button();
             this.BTadicionafoto = new System.Windows.Forms.Button();
             this.IMGcliente = new System.Windows.Forms.PictureBox();
+            this.BRexit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IMGcliente)).BeginInit();
             this.SuspendLayout();
@@ -361,6 +361,7 @@
             this.TXTdoc.Name = "TXTdoc";
             this.TXTdoc.Size = new System.Drawing.Size(114, 23);
             this.TXTdoc.TabIndex = 1;
+            this.TXTdoc.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.TXTdoc.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // TXTnasc
@@ -607,21 +608,6 @@
             this.CBbairro.TabIndex = 9;
             this.CBbairro.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
-            // BTfechar
-            // 
-            this.BTfechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.BTfechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTfechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTfechar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTfechar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.BTfechar.Location = new System.Drawing.Point(59, 629);
-            this.BTfechar.Name = "BTfechar";
-            this.BTfechar.Size = new System.Drawing.Size(104, 28);
-            this.BTfechar.TabIndex = 16;
-            this.BTfechar.Text = "Fechar";
-            this.BTfechar.UseVisualStyleBackColor = false;
-            this.BTfechar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // BTremovefoto
             // 
             this.BTremovefoto.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -629,7 +615,7 @@
             this.BTremovefoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTremovefoto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.BTremovefoto.Image = global::Curso.cadastro.Properties.Resources.icons8_fotografia_16;
-            this.BTremovefoto.Location = new System.Drawing.Point(169, 207);
+            this.BTremovefoto.Location = new System.Drawing.Point(169, 212);
             this.BTremovefoto.Name = "BTremovefoto";
             this.BTremovefoto.Size = new System.Drawing.Size(39, 28);
             this.BTremovefoto.TabIndex = 11;
@@ -672,17 +658,17 @@
             this.BTnovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTnovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTnovo.UseVisualStyleBackColor = false;
-            this.BTnovo.Click += new System.EventHandler(this.button1_Click);
+            this.BTnovo.Click += new System.EventHandler(this.BTnovo_Click);
             // 
             // BTadicionafoto
             // 
-            this.BTadicionafoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(77)))), ((int)(((byte)(31)))));
+            this.BTadicionafoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(150)))), ((int)(((byte)(61)))));
             this.BTadicionafoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTadicionafoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTadicionafoto.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTadicionafoto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.BTadicionafoto.Image = global::Curso.cadastro.Properties.Resources.icons8_fotografia_16;
-            this.BTadicionafoto.Location = new System.Drawing.Point(59, 208);
+            this.BTadicionafoto.Location = new System.Drawing.Point(59, 212);
             this.BTadicionafoto.Name = "BTadicionafoto";
             this.BTadicionafoto.Size = new System.Drawing.Size(104, 28);
             this.BTadicionafoto.TabIndex = 11;
@@ -704,6 +690,18 @@
             this.IMGcliente.TabIndex = 10;
             this.IMGcliente.TabStop = false;
             // 
+            // BRexit
+            // 
+            this.BRexit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BRexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRexit.Location = new System.Drawing.Point(59, 629);
+            this.BRexit.Name = "BRexit";
+            this.BRexit.Size = new System.Drawing.Size(93, 28);
+            this.BRexit.TabIndex = 23;
+            this.BRexit.Text = "Fechar";
+            this.BRexit.UseVisualStyleBackColor = false;
+            this.BRexit.Click += new System.EventHandler(this.BRexit_Click);
+            // 
             // FRMCADcliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,10 +710,10 @@
             this.BackgroundImage = global::Curso.cadastro.Properties.Resources.image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 661);
+            this.Controls.Add(this.BRexit);
             this.Controls.Add(this.BTremovefoto);
             this.Controls.Add(this.BTsalvar);
             this.Controls.Add(this.BTnovo);
-            this.Controls.Add(this.BTfechar);
             this.Controls.Add(this.BTadicionafoto);
             this.Controls.Add(this.IMGcliente);
             this.Controls.Add(this.CBbairro);
@@ -815,9 +813,9 @@
         private System.Windows.Forms.PictureBox IMGcliente;
         private System.Windows.Forms.Button BTadicionafoto;
         private System.Windows.Forms.Button BTremovefoto;
-        private System.Windows.Forms.Button BTfechar;
         private System.Windows.Forms.Button BTnovo;
         private System.Windows.Forms.Button BTsalvar;
+        private System.Windows.Forms.Button BRexit;
     }
 }
 

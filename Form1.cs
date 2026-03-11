@@ -110,6 +110,10 @@ namespace Curso.cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (ValidarCampos() == true)
+                return;
+
+
             SalvarClienteMysql();
         }
 
@@ -208,6 +212,11 @@ namespace Curso.cadastro
 
         }
 
+        private void BRexit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -232,11 +241,6 @@ namespace Curso.cadastro
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SalvarClienteMysql()
         {
             using (MySqlConnection conexao = new MySqlConnection("server=127.0.0.1;port=3306;database=base_cliente;user=root;password="))
@@ -250,18 +254,26 @@ namespace Curso.cadastro
                     cmd.Parameters.AddWithValue("@nome", TXTcliente.Text);
                     cmd.Parameters.AddWithValue("@documento", TXTdoc.Text);
 
-                    if(RBmasc.Checked == true)
-                        {
+                    if (RBmasc.Checked == true)
+                    {
                         cmd.Parameters.AddWithValue("@genero", "Masculino");
                     }
-                    else if(RBfemi.Checked == true)
+                    else if (RBfemi.Checked == true)
                     {
                         cmd.Parameters.AddWithValue("@genero", "Feminino");
                     }
-                    
+
                     cmd.Parameters.AddWithValue("@rg", TXTrg.Text);
                     cmd.Parameters.AddWithValue("@estado_civil", CBestadocivil.Text);
-                    cmd.Parameters.AddWithValue("@nasc", TXTnasc.Text);
+
+
+                    if (TXTnasc.Text == "  /  /")
+                        cmd.Parameters.AddWithValue("@nasc", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@nasc", Convert.ToDateTime(TXTnasc.Text));
+
+
+
                     cmd.Parameters.AddWithValue("@cep", TXTcep.Text);
                     cmd.Parameters.AddWithValue("@endereco", CBendereco.Text);
                     cmd.Parameters.AddWithValue("@n", TXTn.Text);
@@ -272,7 +284,7 @@ namespace Curso.cadastro
                     cmd.Parameters.AddWithValue("@email", TXTemail.Text);
                     cmd.Parameters.AddWithValue("@obs", TXTobs.Text);
 
-                    if(CKsituacao.Checked == true)
+                    if (CKsituacao.Checked == true)
                     {
                         cmd.Parameters.AddWithValue("@situacao", "Ativo");
                     }
@@ -281,11 +293,112 @@ namespace Curso.cadastro
                         cmd.Parameters.AddWithValue("@situacao", "Inativo");
                     }
 
-
-
                     cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "SELECT @@IDENTITY";
+                    TXTcodico.Text = cmd.ExecuteScalar().ToString();
+
+
                 }
             }
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        private bool ValidarCampos()
+        {
+            //Validação de campos obrigatórios
+
+            //Validação do nome do cliente
+            if (TXTcliente.Text == "")
+            {
+                MessageBox.Show(" Nome do cliente é obrigatório.");
+                TXTcliente.Focus();
+                return true;
+            }
+
+            //Validação CPF OU CNPJ
+            if (RBcpf.Checked == false && RBcnpj.Checked == false)
+            {
+                MessageBox.Show("Marque o tipo de Documentação");
+                return true;
+            }
+
+            //Validação do nome do Documentos
+            if (TXTdoc.Text == "")
+            {
+                if (RBcpf.Checked == true)
+                    MessageBox.Show("Digite o CPF.");
+                else if (RBcnpj.Checked == true)
+                    MessageBox.Show("Digite o CNPJ.");
+
+                TXTdoc.Focus();
+                return true;
+            }
+
+            //Validação Genero
+            if (RBmasc.Checked == false && RBfemi.Checked == false)
+            {
+                MessageBox.Show("Marque seu genero");
+                return true;
+            }
+
+            //Validação DATA
+            if (TXTnasc.Text != "  /  /")
+            {
+                try
+                {
+                    Convert.ToDateTime(TXTnasc.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Data de nascimento Invalida");
+                    return true;
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+            return false;
+        }
+
+        private void BTnovo_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja fazer um novo cadastro?",
+                "C# Aelington", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            TXTcodico.Text = "";
+            TXTcliente.Text = "";
+            TXTdoc.Text = "";
+            TXTrg.Text = "";
+            CBestadocivil.Text = "";
+            TXTnasc.Text = "";
+            TXTcep.Text = "";
+            CBendereco.Text = "";
+            TXTn.Text = "";
+            CBbairro.Text = "";
+            CBcidade.Text = "";
+            CBestado.Text = "";
+            TXTtelefone.Text = "";
+            TXTemail.Text = "";
+            TXTobs.Text = "";
+
+            RBcpf.Checked = false;
+            RBcnpj.Checked = false;
+
+            RBmasc.Checked = false;
+            RBfemi.Checked = false;
+
+            CKsituacao.Checked = true;
+        }
+
+       
     }
+    
 }
