@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace Curso.cadastro
 {
@@ -90,12 +91,12 @@ namespace Curso.cadastro
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            TXTrg.Focus();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            TXTrg.Focus();
         }
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -144,12 +145,21 @@ namespace Curso.cadastro
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (RBcpf.Checked == true)
+            {
+                TXTdoc.Mask = "000,000,000-00";
+                TXTdoc.Focus();
+            }
+           
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (RBcnpj.Checked == true)
+            {
+                TXTdoc.Mask = "00,000,000/0000-00";
+                TXTdoc.Focus();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -169,7 +179,9 @@ namespace Curso.cadastro
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+           funcoes.PRImaiuscula(TXTcliente);
 
+            
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -194,17 +206,17 @@ namespace Curso.cadastro
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            funcoes.PRImaiuscula(CBbairro);
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            funcoes.PRImaiuscula(CBcidade);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            funcoes.PRImaiuscula(CBestado);
         }
 
         private void maskedTextBox3_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
@@ -219,7 +231,7 @@ namespace Curso.cadastro
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            funcoes.PRImaiuscula(CBestadocivil);
         }
 
         private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -356,14 +368,6 @@ namespace Curso.cadastro
             }
 
 
-
-
-
-
-
-
-
-
             return false;
         }
 
@@ -398,7 +402,39 @@ namespace Curso.cadastro
             CKsituacao.Checked = true;
         }
 
-       
+        private void CBestadocivil_Validated(object sender, EventArgs e)
+        {
+            if (CBestadocivil.Text == "")
+                return;
+
+            if(CBestadocivil.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um estado civil");
+                CBestadocivil.Focus();
+            }
+        }
+
+        private void CBestado_Validating(object sender, CancelEventArgs e)
+        {
+            if (CBestado.Text == "")
+                return;
+
+            if (CBestado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um estado");
+                CBestadocivil.Focus();
+            }
+        }
+
+        private void TXTcep_Validating(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("CEP: " + TXTcep.Text);
+        }
+
+        private void CBendereco_TextChanged(object sender, EventArgs e)
+        {
+            funcoes.PRImaiuscula(CBendereco);
+        }
     }
     
 }

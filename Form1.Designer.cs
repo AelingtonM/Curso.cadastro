@@ -357,7 +357,6 @@
             this.TXTdoc.BackColor = System.Drawing.Color.Gainsboro;
             this.TXTdoc.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTdoc.Location = new System.Drawing.Point(233, 149);
-            this.TXTdoc.Mask = "000,000,000-00";
             this.TXTdoc.Name = "TXTdoc";
             this.TXTdoc.Size = new System.Drawing.Size(114, 23);
             this.TXTdoc.TabIndex = 1;
@@ -383,7 +382,9 @@
             this.TXTcep.Name = "TXTcep";
             this.TXTcep.Size = new System.Drawing.Size(106, 20);
             this.TXTcep.TabIndex = 6;
+            this.TXTcep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.TXTcep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected_1);
+            this.TXTcep.Validating += new System.ComponentModel.CancelEventHandler(this.TXTcep_Validating);
             // 
             // TXTtelefone
             // 
@@ -528,6 +529,7 @@
             this.CBestado.Size = new System.Drawing.Size(167, 23);
             this.CBestado.TabIndex = 11;
             this.CBestado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CBestado.Validating += new System.ComponentModel.CancelEventHandler(this.CBestado_Validating);
             // 
             // CBestadocivil
             // 
@@ -535,6 +537,7 @@
             this.CBestadocivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBestadocivil.BackColor = System.Drawing.Color.Gainsboro;
             this.CBestadocivil.DropDownHeight = 100;
+            this.CBestadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBestadocivil.DropDownWidth = 100;
             this.CBestadocivil.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBestadocivil.FormattingEnabled = true;
@@ -549,6 +552,7 @@
             this.CBestadocivil.Size = new System.Drawing.Size(125, 23);
             this.CBestadocivil.TabIndex = 4;
             this.CBestadocivil.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.CBestadocivil.Validated += new System.EventHandler(this.CBestadocivil_Validated);
             // 
             // CBendereco
             // 
@@ -570,6 +574,7 @@
             this.CBendereco.Size = new System.Drawing.Size(371, 23);
             this.CBendereco.TabIndex = 7;
             this.CBendereco.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.CBendereco.TextChanged += new System.EventHandler(this.CBendereco_TextChanged);
             // 
             // CBcidade
             // 
